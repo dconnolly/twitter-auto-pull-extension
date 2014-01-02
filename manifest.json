@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+
+    "name": "Twitter.com Auto-Pull",
+    "version": "0.0.1",
+    "description": "Auto-update your twitter stream without clicking to load new tweets.",
+
+    "permissions": [
+        "http://twitter.com/",
+        "https://twitter.com/"
+    ],
+
+    "web_accessible_resources": ["jquery-2.0.3.min.map"],
+
+    "content_scripts": [{
+        "matches": ["http://twitter.com/*", "https://twitter.com/*"],
+        "css": ["twitter-auto-pull.css"],
+        "js": ["jquery-2.0.3.min.js", "main.js"],
+        "run_at": "document_end",
+        "all_frames": true
+    }]
+}
